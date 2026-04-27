@@ -1,10 +1,14 @@
 package src.s1;
 
-import src.SimpleBenchmark;
-
 public class RecursividadSimple {
 
     // Página visualización --> https://recursion.vercel.app/
+
+    // def fn(n):
+    //     if n<=1:
+    //         return n
+    //     else:
+    //         return n * fn(n-1)
 
     // Factorial con Iterativa
     public static int factorailIter(int n){
@@ -26,9 +30,6 @@ public class RecursividadSimple {
     }
 
     public static void main(String[] args) {
-        int n = 15;
         
-        SimpleBenchmark.benchmark(() -> factorailIter(n), "factorailIter", 1_000_000);
-        SimpleBenchmark.benchmark(() -> factorialRS(n), "factorialRS", 1_000_000);
     }
 }
