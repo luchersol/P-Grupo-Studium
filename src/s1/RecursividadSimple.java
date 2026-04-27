@@ -14,12 +14,13 @@ public class RecursividadSimple {
     public static int factorailIter(int n){
         int res = 1;
 
-        for (int i = 2; i <= n; i++) {
-            res *= i;
+        for (int i = 1; i <= n; i++) {
+            res = res * i;
         }
 
         return res;
     }
+
 
     // Factorial con Recursividad Simple
     public static int factorialRS(int n) {
