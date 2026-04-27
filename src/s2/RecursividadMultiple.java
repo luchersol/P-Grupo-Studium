@@ -1,29 +1,12 @@
+package src.s2;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class Recursividad {
+import src.MedirTiempo;
 
-    // Página visualización --> https://recursion.vercel.app/
-
-    // Factorial con Iterativa
-    public static int factorailIter(int n){
-        int res = 1;
-
-        for (int i = 2; i <= n; i++) {
-            res *= i;
-        }
-
-        return res;
-    }
-
-    // Factorial con Recursividad Simple
-    public static int factorialRS(int n) {
-        if(n == 1)
-            return n;
-        else
-            return n * factorialRS(n-1);
-    }
-
+public class RecursividadMultiple {
+    
     // Fibonacci con Recursividad Múltiple
     public static int fibonacciRM(int n) {
         if(n == 0 || n == 1)
@@ -55,6 +38,9 @@ public class Recursividad {
     }
 
     public static void main(String[] args) {
+        int n = 10;
         
+        MedirTiempo.medir(() -> fibonacciRM(n), "fibonacciRM");
+        MedirTiempo.medir(() -> fibonacciMemo(n), "fibonacciMemo");
     }
 }

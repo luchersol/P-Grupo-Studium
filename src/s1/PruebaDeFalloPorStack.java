@@ -1,3 +1,5 @@
+package src.s1;
+
 public class PruebaDeFalloPorStack {
 
     private static int depth = 0;
