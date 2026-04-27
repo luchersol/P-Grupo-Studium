@@ -3,7 +3,7 @@ package src.s2;
 import java.util.HashMap;
 import java.util.Map;
 
-import src.MedirTiempo;
+import src.SimpleBenchmark;
 
 public class RecursividadMultiple {
     
@@ -38,9 +38,10 @@ public class RecursividadMultiple {
     }
 
     public static void main(String[] args) {
-        int n = 10;
-        
-        MedirTiempo.medir(() -> fibonacciRM(n), "fibonacciRM");
-        MedirTiempo.medir(() -> fibonacciMemo(n), "fibonacciMemo");
+        int n = 30;
+        memo.clear();
+
+        SimpleBenchmark.benchmark(() -> fibonacciRM(n), "fibonacciRM", 1_000);
+        SimpleBenchmark.benchmark(() -> fibonacciMemo(n), "fibonacciMemo", 1_000);
     }
 }

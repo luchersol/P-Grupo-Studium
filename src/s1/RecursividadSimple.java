@@ -1,5 +1,7 @@
 package src.s1;
 
+import src.SimpleBenchmark;
+
 public class RecursividadSimple {
 
     // Página visualización --> https://recursion.vercel.app/
@@ -17,16 +19,16 @@ public class RecursividadSimple {
 
     // Factorial con Recursividad Simple
     public static int factorialRS(int n) {
-        if(n == 1)
+        if(n <= 1)
             return n;
         else
             return n * factorialRS(n-1);
     }
 
     public static void main(String[] args) {
-        int n = 10;
+        int n = 15;
         
-         factorailIter(n);
-        factorialRS(n);
+        SimpleBenchmark.benchmark(() -> factorailIter(n), "factorailIter", 1_000_000);
+        SimpleBenchmark.benchmark(() -> factorialRS(n), "factorialRS", 1_000_000);
     }
 }
